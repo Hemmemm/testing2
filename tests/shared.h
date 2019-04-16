@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-#define TRAVIS 0
+#define TRAVIS 1
 
 extern "C" {
 #include "common.h"
