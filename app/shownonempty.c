@@ -43,7 +43,8 @@ static void shownonempty_line(int index, char *contents, int cursor,
     /* Если нашли непробельный символ, то выводим строку*/
     if (cursor >= 0) {
       /* Есил в строке есть курсор выводим вместе с ним */
-      for (int j = 0; j < (int)strlen(contents) + 1; j++) {
+      int j;
+      for (j = 0; j < (int)strlen(contents) + 1; j++) {
         if (j == cursor) {
           printf("|");
         }
