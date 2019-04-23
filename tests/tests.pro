@@ -25,9 +25,6 @@ HEADERS += ../app/common.h \
 
 SOURCES += main.cpp \
     ../app/load.c \
-    ../app/showupper.c \
-    ../app/remove_first_entry_line.c \
-    ../app/cursor_to_begin.c \
     ../app/mwcrsr.c \
     ../app/text/append_line.c \
     ../app/text/delete_line.c \
