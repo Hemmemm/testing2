@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-constexpr bool TRAVIS = 0;
+constexpr bool TRAVIS = 1;
 
 extern "C" {
 #include "common.h"
