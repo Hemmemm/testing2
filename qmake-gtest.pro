@@ -7,4 +7,7 @@ QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage -O0
 
 SUBDIRS = app tests
 
-CONFIG += ordered c++11
+CONFIG += ordered
+
+# C++11
+QMAKE_CXXFLAGS += -std=c++11

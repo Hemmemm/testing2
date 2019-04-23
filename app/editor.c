@@ -13,7 +13,6 @@
 #include "common.h"
 #include "text/text.h"
 
-#define MAXLINE 255
 
 int main() {
   char cmdline[MAXLINE + 1];
