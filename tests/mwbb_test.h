@@ -309,56 +309,5 @@ TEST(mwbb_test, test6) {
         FAIL();
     }
 }
-TEST(mwbb_test, test7) {
-    /*
-        Open output file
-    */
-    FILE *outputFile;
-    TRAVIS ? outputFile = fopen("tests/output/output17.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output17.txt", "wb");
-    if (outputFile == NULL) {
-        printf("Cannot open file for output");
-        FAIL();
-    }
-    int oldstdOut = changeStream(outputFile);
 
-    /*
-        Load input data
-    */
-
-    text txt = create_text();
-    char inFile[MAXLINE];
-    TRAVIS ? strncpy(inFile, "tests/input/input12.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input12.txt", MAXLINE);
-    load(txt, inFile);
-
-    /*
-        Run test function
-    */
-
-   mwcrsr(txt, 3, 28);
-   mwbb(txt);
-   show(txt);
-
-    /*
-        Close output file
-    */
-
-    returnStream(outputFile, oldstdOut);
-
-    /*
-        Execute test
-    */
-
-    FILE *expectedData;
-    TRAVIS ? expectedData = fopen("tests/expected/expected17.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected17.txt", "r");
-    FILE *outputData;
-    TRAVIS ? outputData = fopen("tests/output/output17.txt", "r") : outputData = fopen("../../testing2/tests/output/output17.txt", "r");
-
-    if (executeTest(expectedData, outputData) == 1) {
-        SUCCEED();
-    } else {
-        FAIL();
-    }
-}
-
-//12, 24, 25, 27, 28
 #endif // MWBB_TEST_H
